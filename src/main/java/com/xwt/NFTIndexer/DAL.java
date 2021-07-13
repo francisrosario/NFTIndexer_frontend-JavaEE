@@ -16,7 +16,7 @@ public class DAL {
 
     public ResultSet getData() throws SQLException {
         Connection connection = getConnection();
-        String SQLQuery = "SELECT * FROM indexer.caIndexed;";
+        String SQLQuery = "SELECT * FROM indexer.caIndexed ORDER BY indexer.caIndexed.id DESC;";
         PreparedStatement stmt = connection.prepareStatement(SQLQuery);
         return stmt.executeQuery();
     }
